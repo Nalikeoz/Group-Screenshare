@@ -17,7 +17,7 @@ pip install pycrypto
 pip install pillow
 ```
 
-## Deployment
+## Usage
 In order to start using the the project you'll have to follow the following steps:
 1. Open **Client.py** with a text editor and change the SERVER_IP const to your streamer's local IP address.
 2. Run **Streamer.py** file and wait for a 'Server started [...]' message.
