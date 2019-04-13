@@ -18,7 +18,7 @@ pip install pillow
 ```
 
 ## Deployment
-In order to the the project you'll have to follow the following steps:
+In order to start using the the project you'll have to follow the following steps:
 1. Open **Client.py** with a text editor and change the SERVER_IP const to your streamer's local IP address.
 2. Run **Streamer.py** file and wait for a 'Server started [...]' message.
 3. Run **Client.py** to start watching the screen share stream (you may run more than one client).
