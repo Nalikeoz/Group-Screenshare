@@ -1,5 +1,5 @@
 # Screen-Share-Stream
-The program allows you to share your screen to multiple users at a time,
+The program allows you sharing your screen to multiple users at a time,
 while all data (screenshots) are encrypted with AES encryption.
 In Addition, every client can change his display resolution and still enjoy a good looking 
 image.
