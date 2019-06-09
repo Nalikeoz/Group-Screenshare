@@ -25,7 +25,7 @@ In order to start using the the project you'll have to follow the following step
 
 ## Built With
 * [PyCharm](https://www.jetbrains.com/pycharm/) - Working framework.
-* [Python 2.7](https://www.python.org/)         - Programming language.
+* [C#](https://www.python.org/)         - Programming language.
 
 ## Author
 * **Nadav Shamir** - [Nalikeoz](https://github.com/Nalikeoz)
