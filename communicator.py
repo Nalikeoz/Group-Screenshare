@@ -1,6 +1,6 @@
 import socket
 import pickle
-from AESCipher import AESCipher
+from aes_cipher import AESCipher
 
 
 LEN_OF_LENGTH = 6

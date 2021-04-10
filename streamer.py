@@ -1,9 +1,9 @@
 import socket
 from select import select
-from Communicator import Communicator
-from Screenshot import Screenshot
+from communicator import Communicator
+from screenshot import Screenshot
 from threading import Thread
-from Messages import *
+from messages import *
 
 SERVER_IP = '0.0.0.0'
 SERVER_PORT = 8081

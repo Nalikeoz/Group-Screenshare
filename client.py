@@ -1,8 +1,8 @@
 import socket
 import pygame
-from Communicator import Communicator
+from communicator import Communicator
 import StringIO
-from EventsHandler import EventsHandler
+from events_handler import EventsHandler
 
 SERVER_IP = '0.0.0.0'
 SERVER_PORT = 8081
