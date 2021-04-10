@@ -20,7 +20,7 @@ class Communicator(object):
         :param client_socket: the socket to send the message on.
         """
         if to_pickle:
-            message = pickle.dumps(message) + PICKLE_BIT
+            message = f'{pickle.dumps(message)}{PICKLE_BIT}'
 
         if message.find(IMAGE_SUFFIX) != -1:
             encrypted_message = self.aes_cipher.encrypt_image_data(message[:-len(IMAGE_SUFFIX)])
@@ -59,7 +59,7 @@ class Communicator(object):
         :return: the message length
         """
         message_length = ""
-        while (len(message_length) != LEN_OF_LENGTH):
+        while len(message_length) != LEN_OF_LENGTH:
             message_length += client_socket.recv(LEN_OF_LENGTH - len(message_length))
         return int(message_length)
 
@@ -71,7 +71,7 @@ class Communicator(object):
         :return: the message that was received.
         """
         content = ""
-        while (len(content) != message_length):
+        while len(content) != message_length:
             content += client_socket.recv(message_length - len(content))
         return content
 

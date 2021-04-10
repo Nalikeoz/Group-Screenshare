@@ -12,7 +12,7 @@ class Screenshot(object):
         :return: a PIL.ImageGrab object of the screen shot.
         """
         image = ImageGrab.grab()
-        if image_size is ():
+        if image_size:
             return image
         return image.resize(image_size, Image.ANTIALIAS)
 

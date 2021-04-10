@@ -12,7 +12,7 @@ class EventsHandler(object):
         self.user_socket = user_socket
         self.communicator = Communicator()
 
-    def display_events(self, screen):
+    def display_events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
