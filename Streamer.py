@@ -34,9 +34,9 @@ class Streamer(object):
         """
         self.streamer_socket.bind((SERVER_IP, SERVER_PORT))
         self.streamer_socket.listen(1)
-        print '================================================'
-        print '[STREAMER] Starting server on: ' + SERVER_IP + ':' + str(SERVER_PORT)
-        print '================================================'
+        print('================================================')
+        print(f'[STREAMER] Starting server on: {SERVER_IP}:{str(SERVER_PORT)}))
+        print('================================================')
 
     def new_user(self):
         """
@@ -48,7 +48,7 @@ class Streamer(object):
         client_ip_address = client_address[0]
         self.online_users[client_socket] = DEFAULT_DISPLAY_RESOLUTION
         Thread(target=self.send_screenshots, args=[client_socket]).start()
-        print '[STREAMER] New Online User [' + str(client_ip_address) + ']'
+        print('[STREAMER] New Online User [' + str(client_ip_address) + ']')
 
     def send_screenshots(self, user_socket):
         """
@@ -63,7 +63,7 @@ class Streamer(object):
                     user_display_resolution = self.online_users[user_socket]
                     image_data = self.screenshot.get_screenshot_data(image_resize=user_display_resolution) + IMAGE_SUFFIX
                     self.communicator.send_enc_message(image_data, False, user_socket)
-                except KeyError, socket.error:
+                except (KeyError, socket.error):
                     self.remove_user(user_socket)
                     break
         else:
@@ -78,8 +78,8 @@ class Streamer(object):
         try:
             del self.online_users[user_socket]
             user_socket.close()
-            print '[STREAMER] User has been disconnected.'
-        except KeyError, socket.error:
+            print('[STREAMER] User has been disconnected.')
+        except(KeyError, socket.error):
             pass
 
     def define_message_type(self, message, user_socket):
@@ -93,7 +93,7 @@ class Streamer(object):
 
     def run_server(self):
         while self.running:
-            rlist, wlist, xlist = select(self.online_users.keys() + [self.streamer_socket], [], [])
+            rlist, wlist, xlist = select(list(self.online_users.keys()) + [self.streamer_socket], [], [])
             for user_socket in rlist:
                 if user_socket is self.streamer_socket:
                     self.new_user()
@@ -101,7 +101,7 @@ class Streamer(object):
                     try:
                         message = self.communicator.get_dec_message(user_socket)
                         self.define_message_type(message, user_socket)
-                    except Exception as e:
+                    except:
                         self.remove_user(user_socket)
 
 

@@ -1,8 +1,8 @@
 from Crypto.Cipher import AES
 from hashlib import md5
 
-ENC_KEY = md5('key').hexdigest()
-PADDING_CHAR = '*'
+ENC_KEY = md5(b'key').hexdigest()
+PADDING_CHAR = b'*'
 START_OF_ENC = 'START'
 IMAGE_SUFFIX = 'IMG'
 

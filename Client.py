@@ -4,7 +4,7 @@ from Communicator import Communicator
 import StringIO
 from EventsHandler import EventsHandler
 
-SERVER_IP = '10.0.0.2'
+SERVER_IP = '0.0.0.0'
 SERVER_PORT = 8081
 SCREEN_NAME = ''
 DEFAULT_DISPLAY_RESOLUTION = (800, 600)
@@ -32,7 +32,7 @@ class Client(object):
         The function connects to the server.
         """
         self.client_socket.connect((SERVER_IP, SERVER_PORT))
-        print '[CLIENT] connected to streamer.'
+        print('[CLIENT] connected to streamer.')
 
     def get_image(self):
         """
